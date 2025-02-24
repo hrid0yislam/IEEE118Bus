@@ -304,3 +304,54 @@ If you encounter issues:
 - IEEE 118-bus system documentation
 - OpenDSS documentation
 - Power system analysis techniques 
+
+Files in the repository: [NEED TO BE DOUBLECHECKED]
+- **master_file.dss**: Main DSS file that loads all other components
+- **master_file_fixed.dss**: Fixed version of the master file
+- **generators.dss**: Original generator definitions with commented-out swing bus
+- **generators_fixed.dss**: Fixed generator definitions with uncommented swing bus
+- **lines.dss**: Line definitions
+- **loads.dss**: Load definitions
+- **shunts.dss**: Shunt definitions
+- **voltage_stabilized_circuit.dss**: Circuit with voltage stabilization measures
+- **simplified_circuit.dss**: Simplified version of the circuit
+
+### Simulation Scripts
+
+- **stabilized_time_series.py**: Main time series simulation with voltage stabilization
+- **voltage_stabilized_simulation.py**: Diagnoses convergence issues and determines maximum load level
+- **fixed_time_series.py**: Fixed version of time series simulation
+- **simplified_time_series.py**: Simplified version of time series simulation
+- **robust_time_series.py**: Robust version of time series simulation
+- **simple_time_series.py**: Simple version of time series simulation
+
+### Diagnostic Scripts
+
+- **diagnose_convergence.py**: Diagnoses convergence issues
+- **check_convergence.py**: Checks convergence
+- **fix_swing_bus.py**: Fixes swing bus issues
+- **fix_generators.py**: Fixes generator issues
+- **test_opendss.py**: Tests OpenDSS installation
+- **check_opendss.py**: Checks OpenDSS functionality
+
+### Visualization Scripts
+
+- **network_visualization.py**: Network visualization
+- **voltage_visualization.py**: Voltage profile visualization
+- **visualize_time_series.py**: Time series visualization
+- **loss_visualization.py**: Loss visualization
+- **simple_loss_viz.py**: Simple loss visualization
+- **voltage_loss_viz.py**: Voltage loss visualization
+- **voltage_loss_analysis.py**: Voltage loss analysis
+
+### Data Files
+
+- **ieee118bus_VLN_Node.txt**: Voltage data
+- **ieee118bus_Power_elem_MVA.txt**: Power flow data
+- **ieee118bus_Losses.txt**: Loss data
+
+### Documentation
+
+- **time_series_solution.md**: Detailed solution for time series simulation
+- **opendss_explanation.md**: Explanation of OpenDSS functionality
+- **FOLDER_STRUCTURE.md**: Recommended folder structure for the repository
