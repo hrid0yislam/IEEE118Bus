@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{float}
+
+% Configure code listing style
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=single,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red}
+}
+
+\title{Time Series Power Flow Analysis\\IEEE 118-Bus System}
+\author{Power System Analysis Report}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This document explains the implementation of a 24-hour time series power flow analysis for the IEEE 118-bus system. The simulation captures the daily load variations and their impact on system performance, including voltage profiles and power losses.
+
+\section{Load Profile Modeling}
+
+\subsection{Daily Load Pattern}
+The simulation uses a typical daily load curve with the following characteristics:
+\begin{itemize}
+    \item Peak load periods: 11:00 and 18:00 (100\% of base load)
+    \item Minimum load: 04:00 (55\% of base load)
+    \item Morning ramp: 05:00-11:00
+    \item Evening ramp: 16:00-18:00
+    \item Night decline: 19:00-23:00
+\end{itemize}
+
+\subsection{Load Multiplier Implementation}
+For each hour, all loads in the system are scaled using a load multiplier:
+\begin{lstlisting}[caption=Load Scaling Implementation]
+# Set load multiplier for all loads
+dss.Text.Command(f'BatchEdit Load..* kW={mult}')
+dss.Text.Command(f'BatchEdit Load..* kvar={mult}')
+\end{lstlisting}
+
+\section{Simulation Architecture}
+
+\subsection{Initialization}
+The simulation begins by:
+\begin{enumerate}
+    \item Starting OpenDSS engine
+    \item Loading circuit components (generators, lines, transformers, loads)
+    \item Setting base parameters (frequency, voltage bases)
+    \item Configuring solution parameters (algorithm, tolerances)
+\end{enumerate}
+
+\subsection{Time Series Loop}
+For each hour (0-23):
+\begin{enumerate}
+    \item Apply load multiplier to all loads
+    \item Solve power flow
+    \item Check convergence
+    \item Collect system metrics:
+        \begin{itemize}
+            \item Active and reactive losses
+            \item Minimum, maximum, and average voltages
+            \item Load multiplier value
+        \end{itemize}
+    \item Store results for analysis
+\end{enumerate}
+
+\section{Key Metrics and Analysis}
+
+\subsection{System Losses}
+The simulation tracks:
+\begin{itemize}
+    \item Active power losses (kW)
+    \item Reactive power losses (kVAR)
+    \item Correlation between load level and losses
+\end{itemize}
+
+\subsection{Voltage Profiles}
+For each time step:
+\begin{itemize}
+    \item Minimum voltage across all buses
+    \item Maximum voltage across all buses
+    \item Average system voltage
+    \item Violations of voltage limits (0.95-1.05 pu)
+\end{itemize}
+
+\section{Visualization and Reporting}
+
+\subsection{Generated Plots}
+\begin{enumerate}
+    \item \textbf{System Losses Over 24 Hours}
+        \begin{itemize}
+            \item Active and reactive power losses
+            \item Time correlation with load pattern
+        \end{itemize}
+    
+    \item \textbf{Voltage Profile Over 24 Hours}
+        \begin{itemize}
+            \item Maximum, minimum, and average voltages
+            \item Voltage limit violations
+            \item Daily voltage variation pattern
+        \end{itemize}
+    
+    \item \textbf{Load vs Losses Correlation}
+        \begin{itemize}
+            \item Scatter plot with trend line
+            \item Quadratic relationship analysis
+            \item System efficiency insights
+        \end{itemize}
+\end{enumerate}
+
+\subsection{Data Storage}
+Results are saved in:
+\begin{itemize}
+    \item CSV format for detailed analysis
+    \item PNG images for visualization
+    \item Summary statistics in the console output
+\end{itemize}
+
+\section{Technical Implementation}
+
+\subsection{Solution Parameters}
+\begin{itemize}
+    \item Algorithm: Newton Current Injection Method (NCIM)
+    \item Maximum iterations: 100
+    \item Convergence tolerance: 0.0001
+    \item Load model: Constant power (type 1)
+\end{itemize}
+
+\subsection{Error Handling}
+The simulation includes:
+\begin{itemize}
+    \item Convergence checking for each time step
+    \item Exception handling for OpenDSS errors
+    \item Warning messages for non-convergent solutions
+    \item Data validation and error reporting
+\end{itemize}
+
+\section{Applications and Extensions}
+
+\subsection{Analysis Capabilities}
+\begin{enumerate}
+    \item Load pattern impact assessment
+    \item Voltage stability analysis
+    \item System losses evaluation
+    \item Equipment loading studies
+    \item Operational limit monitoring
+\end{enumerate}
+
+\subsection{Potential Extensions}
+\begin{enumerate}
+    \item Generator dispatch optimization
+    \item Reactive power compensation
+    \item Contingency analysis
+    \item Economic assessment
+    \item Reliability evaluation
+\end{enumerate}
+
+\section{Conclusion}
+The time series simulation provides comprehensive insights into the IEEE 118-bus system's daily operation. It captures the dynamic behavior of the system under varying load conditions and enables detailed analysis of voltage profiles and system losses. The results can be used for operational planning, system improvement, and stability assessment.
+
+\end{document} 

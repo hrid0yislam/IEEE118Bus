@@ -1,0 +1,26 @@
+Network Statistics for IEEE 118-Bus System
+=========================================
+
+General Statistics:
+-----------------
+Number of Buses: 118
+Number of Connections: 170
+Average Degree: 2.88
+Network Density: 0.02
+Connected Components: 2
+Average Path Length: N/A
+Average Clustering Coefficient: 0.17
+Total Load (MW): 0.00
+Total Generation (MW): 0.00
+
+Degree Distribution:
+------------------
+Nodes with 1 connections: 10
+Nodes with 2 connections: 57
+Nodes with 3 connections: 20
+Nodes with 4 connections: 11
+Nodes with 5 connections: 14
+Nodes with 6 connections: 3
+Nodes with 7 connections: 1
+Nodes with 8 connections: 1
+Nodes with 9 connections: 1

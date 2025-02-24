@@ -1,0 +1,15 @@
+Power Loss Analysis Summary
+=========================
+
+Total System Losses: 35.02 MW
+
+Losses by Line:
+Line 89-92: 11.60 MW (33.1%)
+Line 92-94: 8.71 MW (24.9%)
+Line 77-82: 8.70 MW (24.8%)
+Line 85-89: 3.60 MW (10.3%)
+Line 69-77: 2.41 MW (6.9%)
+
+Time-based Analysis:
+Peak Loss Hours: 11:00, 18:00 (Load Factor: 1.00)
+Minimum Loss Hour: 04:00 (Load Factor: 0.55)

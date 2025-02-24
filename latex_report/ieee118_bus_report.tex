@@ -1,0 +1,98 @@
+% IEEE 118-Bus System Analysis Report
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage{hyperref}
+
+\title{IEEE 118-Bus System Analysis Report}
+\author{Power System Analysis Report}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Executive Summary}
+This report presents a comprehensive analysis of the IEEE 118-bus system, focusing on voltage profiles, bus characteristics, and system performance. The analysis reveals significant voltage deviations across the system, with all buses operating below nominal voltage levels.
+
+\section{System Overview}
+The IEEE 118-bus system is a standard test case representing a portion of the American Electric Power System (in the Midwestern US) as of December 1962. The system operates at a nominal voltage of 138 kV.
+
+\section{Voltage Profile Analysis}
+
+\subsection{System-wide Statistics}
+\begin{itemize}
+    \item Maximum Voltage: 0.3919 pu at bus 89\_clinchrv (54.08 kV)
+    \item Minimum Voltage: 0.0518 pu at bus 1\_riversde (7.15 kV)
+    \item System Losses: 76,353.20 kW + j272,041.63 kVAR
+\end{itemize}
+
+\section{Bus Analysis}
+\begin{longtable}{p{3cm}p{2cm}p{2cm}p{2cm}p{4cm}}
+\toprule
+Bus Name & Base kV & PU Voltage & Actual kV & Status \\
+\midrule
+\endhead
+89\_clinchrv & 138.0 & 0.3919 & 54.08 & Low Voltage \\
+90\_holston & 138.0 & 0.3599 & 49.67 & Low Voltage \\
+91\_holstont & 138.0 & 0.3433 & 47.38 & Low Voltage \\
+88\_fremont & 138.0 & 0.3523 & 48.62 & Low Voltage \\
+85\_beaverck & 138.0 & 0.3043 & 41.99 & Low Voltage \\
+87\_pinevle & 138.0 & 0.3019 & 41.66 & Low Voltage \\
+1\_riversde & 138.0 & 0.0518 & 7.15 & Low Voltage \\
+2\_pokagon & 138.0 & 0.0522 & 7.20 & Low Voltage \\
+3\_hickryck & 138.0 & 0.0526 & 7.26 & Low Voltage \\
+117\_corey & 138.0 & 0.0521 & 7.19 & Low Voltage \\
+\bottomrule
+\end{longtable}
+
+\section{Regional Analysis}
+\subsection{Higher Voltage Region (>0.30 pu)}
+The following buses maintain relatively higher voltages compared to the rest of the system:
+\begin{itemize}
+    \item Bus 89\_clinchrv (0.3919 pu) - Swing Bus
+    \item Bus 90\_holston (0.3599 pu)
+    \item Bus 91\_holstont (0.3433 pu)
+    \item Bus 88\_fremont (0.3523 pu)
+    \item Bus 85\_beaverck (0.3043 pu)
+    \item Bus 87\_pinevle (0.3019 pu)
+\end{itemize}
+
+\subsection{Lower Voltage Region (<0.06 pu)}
+The following buses experience severe voltage depression:
+\begin{itemize}
+    \item Bus 1\_riversde (0.0518 pu)
+    \item Bus 2\_pokagon (0.0522 pu)
+    \item Bus 3\_hickryck (0.0526 pu)
+    \item Bus 117\_corey (0.0521 pu)
+\end{itemize}
+
+\section{System Issues and Recommendations}
+
+\subsection{Identified Issues}
+\begin{enumerate}
+    \item Severe voltage depression across all buses
+    \item Significant deviation from nominal voltage (138 kV)
+    \item High system losses
+    \item Potential reactive power imbalance
+\end{enumerate}
+
+\subsection{Recommendations}
+\begin{enumerate}
+    \item Verify generator voltage setpoints and control settings
+    \item Review transformer tap settings
+    \item Evaluate reactive power compensation devices
+    \item Consider adding voltage support at critical buses
+    \item Investigate load modeling parameters
+    \item Review power flow distribution
+\end{enumerate}
+
+\section{Conclusion}
+The IEEE 118-bus system currently exhibits significant voltage stability issues. All buses are operating below the acceptable voltage range (0.95-1.05 pu), indicating a need for immediate corrective actions. The system requires comprehensive voltage support and reactive power management strategies to improve its operational performance.
+
+\end{document}

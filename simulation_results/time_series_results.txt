@@ -1,0 +1,160 @@
+Time Series Simulation Results
+============================
+
+Hour 00:00 (Load: 65.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 01:00 (Load: 60.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 02:00 (Load: 58.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 03:00 (Load: 56.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 04:00 (Load: 55.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 05:00 (Load: 57.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 06:00 (Load: 62.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 07:00 (Load: 72.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 08:00 (Load: 85.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 09:00 (Load: 95.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 10:00 (Load: 98.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 11:00 (Load: 100.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 12:00 (Load: 99.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 13:00 (Load: 97.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 14:00 (Load: 95.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 15:00 (Load: 93.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 16:00 (Load: 94.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 17:00 (Load: 98.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 18:00 (Load: 100.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 19:00 (Load: 97.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 20:00 (Load: 92.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 21:00 (Load: 85.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 22:00 (Load: 75.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+Hour 23:00 (Load: 68.00%)
+  Active Losses: 272.89 MW
+  Reactive Losses: 411.97 MVAR
+  Voltage Range: 0.150 - 1.267 pu
+  Average Voltage: 0.732 pu
+
+
+Summary Statistics:
+------------------
+Average active losses: 272.89 MW
+Maximum active losses: 272.89 MW
+Minimum active losses: 272.89 MW
+
+Average reactive losses: 411.97 MVAR
+Maximum reactive losses: 411.97 MVAR
+Minimum reactive losses: 411.97 MVAR
+
+Lowest voltage: 0.150 pu
+Highest voltage: 1.267 pu
