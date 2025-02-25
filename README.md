@@ -67,6 +67,10 @@ The IEEE 118-bus system has inherent convergence challenges. Our investigations 
 ### Setting Up the Environment
 
 ```bash
+# Clone the repository
+git clone https://github.com/hrid0yislam/IEEE118Bus.git
+cd IEEE118Bus
+
 # Install required packages
 pip install -r requirements.txt
 ```
@@ -119,6 +123,30 @@ Alternatively, you can use the Python script directly:
 python src/utils/open_excel.py [filename]
 ```
 
+### GitHub Repository Management
+
+This repository includes a helper script for managing GitHub operations:
+
+```bash
+# Show repository status
+./github_helper.sh status
+
+# Commit changes
+./github_helper.sh commit "Your commit message"
+
+# Push changes to GitHub
+./github_helper.sh push
+
+# Pull latest changes
+./github_helper.sh pull
+
+# Show commit history
+./github_helper.sh log
+
+# Show repository URL
+./github_helper.sh url
+```
+
 ## Key Findings
 
 1. The IEEE 118-bus system is inherently unstable and difficult to solve with OpenDSS.
@@ -135,10 +163,21 @@ python src/utils/open_excel.py [filename]
 4. Extend the analysis to include time-series simulations.
 5. Implement smart inverter controls for improved stability.
 
+## Contributing
+
+Contributions to this repository are welcome. To contribute:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add some feature'`)
+5. Push to the branch (`git push origin feature/your-feature`)
+6. Open a Pull Request
+
 ## License
 
 This project is open source and available under the MIT License.
 
 ## Contact
 
-For questions or contributions, please open an issue in this repository.
+For questions or contributions, please open an issue in this repository or contact the repository owner at [GitHub](https://github.com/hrid0yislam).
