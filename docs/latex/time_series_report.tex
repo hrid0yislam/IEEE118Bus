@@ -1,0 +1,252 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{float}
+
+% Configure code listing style
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=single,
+    breaklines=true,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red}
+}
+
+\title{Time Series Analysis Report:\\IEEE 118-Bus System}
+\author{Power System Analysis}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report presents a comprehensive time series analysis of the IEEE 118-bus power system over a 24-hour period. The analysis focuses on voltage profiles, system losses, and load variations, providing detailed insights into system behavior and recommendations for improvements.
+\end{abstract}
+
+\tableofcontents
+
+\section{Load Profile Analysis}
+
+\subsection{Daily Load Pattern}
+The system exhibits distinct loading patterns throughout the day:
+\begin{itemize}
+    \item \textbf{Peak Periods}: 11:00 and 18:00 (100\% loading)
+    \item \textbf{Minimum Load}: 04:00 (55\% loading)
+    \item \textbf{Load Variations}:
+    \begin{itemize}
+        \item Morning Ramp: 05:00-11:00 (55\% → 100\%)
+        \item Evening Ramp: 16:00-18:00 (93\% → 100\%)
+        \item Night Decline: 19:00-23:00 (97\% → 68\%)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Load Multipliers}
+The hourly load multipliers used in the simulation:
+\begin{lstlisting}
+load_multipliers = [0.65, 0.60, 0.58, 0.56, 0.55, 0.57, 0.62, 0.72, 0.85, 
+                   0.95, 0.98, 1.00, 0.99, 0.97, 0.95, 0.93, 0.94, 0.98, 
+                   1.00, 0.97, 0.92, 0.85, 0.75, 0.68]
+\end{lstlisting}
+
+\section{Voltage Profile Analysis}
+
+\subsection{Critical Bus Voltages}
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Bus & Base Voltage (pu) & Status \\
+\midrule
+89\_CLINCHRV & 0.678 & Highest \\
+69\_SPORN & 0.161 & Critical \\
+77\_TURNER & 0.227 & Critical \\
+92\_SALTVLLE & 0.550 & Concerning \\
+\bottomrule
+\end{tabular}
+\caption{Critical Bus Voltage Summary}
+\end{table}
+
+\subsection{Regional Distribution}
+The system shows significant regional variations in voltage profiles:
+\begin{itemize}
+    \item \textbf{Northern Region}: 0.161-0.350 pu (Most critical)
+    \item \textbf{Central Region}: 0.450-0.550 pu (Below normal)
+    \item \textbf{Southern Region}: 0.550-0.678 pu (Best performing)
+\end{itemize}
+
+\section{System Losses}
+
+\subsection{Loss Components}
+Total system losses can be broken down into:
+\begin{itemize}
+    \item \textbf{Line Losses}: 76,353.20 kW (99.996\%)
+    \item \textbf{Transformer Losses}: 30.54 kW (0.004\%)
+    \item \textbf{Total Base Losses}: 76,383.74 kW
+\end{itemize}
+
+\subsection{Loss Variation}
+Loss characteristics throughout the day:
+\begin{itemize}
+    \item \textbf{Peak Hours}: ∼76 MW
+    \item \textbf{Minimum Load}: ∼23 MW
+    \item \textbf{Relationship}: Quadratic with loading (I²R losses)
+\end{itemize}
+
+\section{Key Findings}
+
+\subsection{Voltage Violations}
+Analysis reveals significant voltage issues:
+\begin{itemize}
+    \item All buses operate below nominal voltage
+    \item No buses within acceptable range (0.95-1.05 pu)
+    \item Most severe violations in northern region
+    \item Voltage variations follow load pattern
+\end{itemize}
+
+\subsection{Loss Characteristics}
+The system exhibits the following loss patterns:
+\begin{itemize}
+    \item Quadratic relationship with loading confirmed
+    \item Line losses dominate system losses
+    \item Peak losses coincide with maximum loading
+    \item Regional loss concentration in heavily loaded areas
+\end{itemize}
+
+\subsection{System Performance Metrics}
+\begin{itemize}
+    \item \textbf{Voltage Stability}: Concerning (all buses below 0.95 pu)
+    \item \textbf{Loss Efficiency}: Poor (30.48\% of total power)
+    \item \textbf{Regional Disparities}: Significant north-south variation
+\end{itemize}
+
+\section{Recommendations}
+
+\subsection{Immediate Actions (1-2 months)}
+\subsubsection{Voltage Support}
+\begin{itemize}
+    \item Install capacitor banks:
+    \begin{itemize}
+        \item Bus 69\_SPORN: 150 MVAR
+        \item Bus 77\_TURNER: 100 MVAR
+    \end{itemize}
+    \item Adjust transformer taps
+    \item Implement local voltage control
+\end{itemize}
+
+\subsubsection{Loss Reduction}
+\begin{itemize}
+    \item Optimize power flow
+    \item Balance loading
+    \item Monitor critical lines
+\end{itemize}
+
+\subsection{Medium-term Solutions (3-6 months)}
+\begin{itemize}
+    \item Install SVCs at critical buses
+    \item Network reconfiguration
+    \item Control system improvements
+    \item Real-time voltage monitoring
+    \item Loss tracking system
+\end{itemize}
+
+\subsection{Long-term Improvements (6+ months)}
+\begin{itemize}
+    \item Network reinforcement
+    \item New transmission lines
+    \item Substation upgrades
+    \item Smart grid integration
+    \item Advanced control systems
+\end{itemize}
+
+\section{Results Summary}
+
+\subsection{Voltage Performance}
+\begin{itemize}
+    \item \textbf{Maximum Voltage}: 0.678 pu (Below normal)
+    \item \textbf{Minimum Voltage}: 0.161 pu (Critical)
+    \item \textbf{Average Voltage}: 0.419 pu (Poor)
+    \item \textbf{Violations}: 100\% of buses
+\end{itemize}
+
+\subsection{Loss Analysis}
+\begin{itemize}
+    \item \textbf{Peak Losses}: 76.38 MW
+    \item \textbf{Minimum Losses}: 23.06 MW
+    \item \textbf{Average Losses}: 49.72 MW
+    \item \textbf{Loss Factor}: 0.3048
+\end{itemize}
+
+\subsection{System Metrics}
+\begin{itemize}
+    \item \textbf{Voltage Stability Margin}: Negative
+    \item \textbf{Loss Percentage}: 30.48\%
+    \item \textbf{Critical Buses}: 3
+    \item \textbf{Affected Regions}: All
+\end{itemize}
+
+\section{Implementation Details}
+
+\subsection{Simulation Framework}
+The time series simulation implements:
+\begin{lstlisting}
+def run_time_series():
+    # Initialize system
+    set_base_parameters()
+    
+    # For each hour
+    for hour in range(24):
+        # Set load multiplier
+        scale_system_load(load_multipliers[hour])
+        
+        # Solve power flow
+        solve_power_flow()
+        
+        # Collect metrics
+        collect_voltage_data()
+        calculate_losses()
+        store_results()
+\end{lstlisting}
+
+\subsection{Analysis Parameters}
+Key simulation parameters:
+\begin{itemize}
+    \item \textbf{Time Steps}: 24 hours
+    \item \textbf{Base Voltage}: 138 kV
+    \item \textbf{Monitoring Points}: 118 buses
+    \item \textbf{Critical Buses}: 4 monitored locations
+\end{itemize}
+
+\section{Future Work}
+
+\subsection{Analysis Extensions}
+Potential areas for further investigation:
+\begin{itemize}
+    \item Dynamic stability assessment
+    \item Contingency analysis
+    \item Economic impact study
+    \item Reliability evaluation
+\end{itemize}
+
+\subsection{Tool Enhancements}
+Proposed improvements to analysis tools:
+\begin{itemize}
+    \item Real-time monitoring capabilities
+    \item Automated reporting systems
+    \item Advanced visualization techniques
+    \item Predictive analytics integration
+\end{itemize}
+
+\section{Conclusion}
+The time series analysis reveals significant voltage and loss variations throughout the day in the IEEE 118-bus system. Critical areas require immediate attention, particularly buses 69\_SPORN and 77\_TURNER. The proposed solutions, implemented in phases, should significantly improve system performance and stability.
+
+\end{document} 
